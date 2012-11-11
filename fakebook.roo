@@ -2,8 +2,6 @@
 project --topLevelPackage com.fakebook --projectName fakebook
 
 #setup persistence and orm provider
-# TODO: create a user/db setup for this project
-#
 jpa setup --provider HIBERNATE --database POSTGRES
 properties set --path SRC_MAIN_RESOURCES --name META-INF/spring/database.properties --key database.url --value jdbc:postgresql://localhost:5432/fakebook
 properties set --path SRC_MAIN_RESOURCES --name META-INF/spring/database.properties --key database.username --value postgres
@@ -41,9 +39,14 @@ service --interface ~.service.FakebookerService 	--entity ~.domain.Fakebooker 	-
 service --interface ~.service.PostService 			--entity ~.domain.Post 			--class ~.service.impl.PostServiceImpl
 service --interface ~.service.CommentService 		--entity ~.domain.Comment 		--class ~.service.impl.CommentServiceImpl
 
+#add json web services
 json all --deepSerialize
 web mvc json setup
 web mvc json all --package ~.web
 
+#add web scaffold
 web mvc setup
 web mvc all --package ~.web
+
+#setup spring security
+security setup

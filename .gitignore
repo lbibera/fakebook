@@ -1,0 +1,12 @@
+#maven-generated
+target
+
+#intelli j
+.idea/
+*.iml
+
+#eclipse
+.project
+.classpath
+
+

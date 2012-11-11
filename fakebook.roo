@@ -1,0 +1,49 @@
+#create new project
+project --topLevelPackage com.fakebook --projectName fakebook
+
+#setup persistence and orm provider
+# TODO: create a user/db setup for this project
+#
+jpa setup --provider HIBERNATE --database POSTGRES
+properties set --path SRC_MAIN_RESOURCES --name META-INF/spring/database.properties --key database.url --value jdbc:postgresql://localhost:5432/fakebook
+properties set --path SRC_MAIN_RESOURCES --name META-INF/spring/database.properties --key database.username --value postgres
+properties set --path SRC_MAIN_RESOURCES --name META-INF/spring/database.properties --key database.password --value password
+
+#create entities
+entity jpa --class ~.domain.Fakebooker --testAutomatically
+field string 	--fieldName email 		--notNull --sizeMin 6 --unique
+field string 	--fieldName firstName 	--notNull
+field string 	--fieldName middleName 	--notNull
+field string 	--fieldName lastName 	--notNull
+field date 		--fieldName birthDate 	--notNull --type java.util.Date
+field string 	--fieldName password 	--notNull --sizeMin 6
+
+entity jpa --class ~.domain.Post --testAutomatically
+field string 	--fieldName message 	--notNull --sizeMin  1
+field reference --fieldName owner 		--notNull --type ~.domain.Fakebooker 
+
+entity jpa --class ~.domain.Comment --testAutomatically
+field string 	--fieldName message 	--notNull --sizeMin 1
+field reference --fieldName post 		--notNull --type ~.domain.Post 
+field reference --fieldName owner 		--notNull --type ~.domain.Fakebooker 
+
+focus --class ~.domain.Post
+field set --fieldName comments --type ~.domain.Comment --cardinality ONE_TO_MANY --mappedBy post
+
+focus --class ~.domain.Fakebooker
+field set --fieldName posts --type ~.domain.Post --cardinality ONE_TO_MANY --mappedBy owner
+
+#test if database had been configured correctly
+perform tests
+
+#services
+service --interface ~.service.FakebookerService 	--entity ~.domain.Fakebooker 	--class ~.service.impl.FakebookerServiceImpl
+service --interface ~.service.PostService 			--entity ~.domain.Post 			--class ~.service.impl.PostServiceImpl
+service --interface ~.service.CommentService 		--entity ~.domain.Comment 		--class ~.service.impl.CommentServiceImpl
+
+json all --deepSerialize
+web mvc json setup
+web mvc json all --package ~.web
+
+web mvc setup
+web mvc all --package ~.web

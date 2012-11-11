@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_com_fakebook_domain_Post" object="${post}" path="/posts" z="x95vmB2UUlNmitXH3nFsvTRY2ks=">
+        <field:display field="message" id="s_com_fakebook_domain_Post_message" object="${post}" z="W+xBb+IkpnCK08VOoIPjy4hY1KE="/>
+        <field:display field="owner" id="s_com_fakebook_domain_Post_owner" object="${post}" z="Tr0iGD585CP6AP8uq/XlRXySavo="/>
+    </page:show>
+</div>

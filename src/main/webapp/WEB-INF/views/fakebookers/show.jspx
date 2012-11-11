@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_com_fakebook_domain_Fakebooker" object="${fakebooker}" path="/fakebookers" z="Vzxhx+DQyZRsroLbaOW5cGJg2JI=">
+        <field:display field="email" id="s_com_fakebook_domain_Fakebooker_email" object="${fakebooker}" z="L912+CKFd/ZgP6rTjUfqj0MVws4="/>
+        <field:display field="firstName" id="s_com_fakebook_domain_Fakebooker_firstName" object="${fakebooker}" z="c9sCoyLMdtI87bn+dLR3y3ai7No="/>
+        <field:display field="middleName" id="s_com_fakebook_domain_Fakebooker_middleName" object="${fakebooker}" z="77Rvkq352xHSMJT/AKFL9XObAxM="/>
+        <field:display field="lastName" id="s_com_fakebook_domain_Fakebooker_lastName" object="${fakebooker}" z="2Mierxf2T+25fUO+8CvPRrUmQnM="/>
+        <field:display date="true" dateTimePattern="${fakebooker_birthdate_date_format}" field="birthDate" id="s_com_fakebook_domain_Fakebooker_birthDate" object="${fakebooker}" z="DOcOOEAlyXJ+uHP+nar0euxzTzY="/>
+        <field:display field="password" id="s_com_fakebook_domain_Fakebooker_password" object="${fakebooker}" z="DQ8owMjCs0jmHkiwKivmgAyscSQ="/>
+    </page:show>
+</div>

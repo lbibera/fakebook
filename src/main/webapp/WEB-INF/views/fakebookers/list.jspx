@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_com_fakebook_domain_Fakebooker" items="${fakebookers}" z="4dtDgmGLINoNrqT02MMQM+wiCug=">
+        <table:table data="${fakebookers}" id="l_com_fakebook_domain_Fakebooker" path="/fakebookers" z="a5BXYWXYEPOf8j1fksu0O2UC6Hg=">
+            <table:column id="c_com_fakebook_domain_Fakebooker_email" property="email" z="Gan+/sUKL2LXEPtnzINmXH6QyEo="/>
+            <table:column id="c_com_fakebook_domain_Fakebooker_firstName" property="firstName" z="9rGv2KFVEdYud1NheZcPamiTbSI="/>
+            <table:column id="c_com_fakebook_domain_Fakebooker_middleName" property="middleName" z="3BGkr+Dq8Caz7KbE9eMzom2azqY="/>
+            <table:column id="c_com_fakebook_domain_Fakebooker_lastName" property="lastName" z="AKOFUOcfu5oA3Tr+OAUtGZhNEcQ="/>
+            <table:column date="true" dateTimePattern="${fakebooker_birthdate_date_format}" id="c_com_fakebook_domain_Fakebooker_birthDate" property="birthDate" z="NZAKyJTscsitWeHC3spwprKxGo8="/>
+            <table:column id="c_com_fakebook_domain_Fakebooker_password" property="password" z="O21cXgRP4Zq4Gd+QtmbrDZYQ4uE="/>
+        </table:table>
+    </page:list>
+</div>

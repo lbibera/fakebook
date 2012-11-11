@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_com_fakebook_domain_Comment" items="${comments}" z="CVY/hpF3zZ6+knl8ugzgblqjRT4=">
+        <table:table data="${comments}" id="l_com_fakebook_domain_Comment" path="/comments" z="Mr40rk+g3u0HGSBlenOda4PbMUM=">
+            <table:column id="c_com_fakebook_domain_Comment_message" property="message" z="WDNyYwkFALIl41lVqRX6E6Li7v0="/>
+            <table:column id="c_com_fakebook_domain_Comment_post" property="post" z="TEj9Vx7ImtoN/8mfXYZimY1+q5k="/>
+            <table:column id="c_com_fakebook_domain_Comment_owner" property="owner" z="Gkx0YWFLZIaLh8WWhfUKdiltOz8="/>
+        </table:table>
+    </page:list>
+</div>

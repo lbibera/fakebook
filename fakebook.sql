@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS fakebook;
+CREATE DATABASE fakebook;
